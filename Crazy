@@ -1,0 +1,41 @@
+import os
+import random
+from time import sleep
+import platform
+import ctypes
+
+lines = [
+    "Crazy? I prefer the term 'eccentric'.",
+    "Crazy? I was crazy once.",
+    "They locked me in a room.",
+    "A Rubber Room.",
+    "A rubber room with rats and rats make me crazy.",
+    "Fish",
+    "I like fish.",
+    "I like fish. I like fish. I like fish.",
+    "Fish. Fish. Fish.",
+    "Gas Station Sushi.",
+    "I like gas station sushi.",
+    "Try to reboot I'll go away.",
+    "Is schrodinger's cat alive or dead?",
+    "Not the Rubber Room you're looking for.",
+    "I like to eat rats.",
+    "Rats are delicious.",
+    "Terminally, I have found a use for rats.",
+    "I like to eat rats in the rubber room.",
+    "How do you know I'm not in the rubber room?",
+    "Where is my rubber room?",
+    "Check /etc/room",
+    "Tate has a big nose.",
+    "Have you thought of moving to Windows?",
+    "Windows is Malware.",
+    "Try Arch Linux.",
+    "Do you like russian nesting rats?",
+]
+while True:
+    if platform.system() == "Linux":
+        os.system(f"wall -n {random.choice(lines)}")
+        sleep(random.randint(90, 300))
+    else:
+        ctypes.windll.user32.MessageBoxW(0, random.choice(lines), "Crazy?", 1)
+        sleep(random.randint(90, 300))
